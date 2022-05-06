@@ -1,4 +1,4 @@
-const socket = io("http://localhost:3000", { transports : ['websocket'] });
+const socket = io("http://localhost", { transports : ['websocket'] });
 
 const message = document.querySelector("#message");
 const clients = document.querySelector("#clients");

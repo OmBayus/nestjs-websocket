@@ -9,15 +9,15 @@ import {
 
 import { Socket, Server } from 'socket.io';
 
-@WebSocketGateway(80)
-export class ChatGateway implements OnGatewayConnection, OnGatewayDisconnect {
+@WebSocketGateway({ namespace: 'chat2' })
+export class Chat2Gateway implements OnGatewayConnection, OnGatewayDisconnect {
   @WebSocketServer()
   server: Server;
 
   clients = [];
 
   handleConnection(client: Socket): void {
-    console.log(1);
+    console.log(2);
     this.clients.push(client.id);
     this.server.emit('connection', this.clients);
   }
